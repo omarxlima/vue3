@@ -1,5 +1,6 @@
 <template>
-  <Topo v-if="showHeader"/>
+  <Topo></Topo>
+  <!-- <Topo v-if="showHeader"/> -->
 
     <div v-show="showName"> 
       Nome: {{ name }}
@@ -29,7 +30,7 @@ export default {
   },
   data() {
     return {
-      showHeader: false,
+      showHeader: true,
       name : 'Luke',
       lastName: 'Skywalker',
       showName: true,
