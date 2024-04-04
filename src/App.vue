@@ -1,5 +1,17 @@
 <template>
-  <Topo/>
+  <Topo v-if="showHeader"/>
+
+    <div v-show="showName"> 
+      Nome: {{ name }}
+      SobreNome: {{ lastName }}
+    </div>
+
+    <div v-if="accessLevel == 'admin'">Admin</div>
+    <div v-else-if="accessLevel == 'marketing'"> Marketin</div>
+    <div v-else >User</div>
+
+
+
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
@@ -14,7 +26,16 @@ export default {
   components: {
     HelloWorld,
     Topo
-  }
+  },
+  data() {
+    return {
+      showHeader: false,
+      name : 'Luke',
+      lastName: 'Skywalker',
+      showName: true,
+      accessLevel: 'outro'
+    }
+  },
 }
 </script>
 
