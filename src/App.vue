@@ -1,42 +1,80 @@
 <template>
   <Topo></Topo>
-  <!-- <Topo v-if="showHeader"/> -->
 
-    <div v-show="showName"> 
-      Nome: {{ name }}
-      SobreNome: {{ lastName }}
+  <!-- <div v-show="showName">
+    Nome: {{ name }}
+    SobreNome: {{ lastName }}
+  </div>
+
+  <div v-if="accessLevel == 'admin'">Admin</div>
+  <div v-else-if="accessLevel == 'marketing'"> Marketin</div>
+  <div v-else>User</div> -->
+
+  <div>
+    <div v-for="(todo, index) in todos" :key="todo.id">
+     {{ index }} - {{ todo.title }}
     </div>
 
-    <div v-if="accessLevel == 'admin'">Admin</div>
-    <div v-else-if="accessLevel == 'marketing'"> Marketin</div>
-    <div v-else >User</div>
+  </div>
 
 
 
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HelloWorld />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
 
 import Topo from './components/Topo.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    // HelloWorld,
     Topo
   },
   data() {
     return {
-      showHeader: true,
-      name : 'Luke',
-      lastName: 'Skywalker',
-      showName: true,
-      accessLevel: 'outro'
+      // showHeader: true,
+      // name: 'Luke',
+      // lastName: 'Skywalker',
+      // showName: true,
+      // accessLevel: 'admin',
+      todos: [
+        {
+          "userId": 1,
+          "id": 1,
+          "title": "delectus aut autem",
+          "completed": false
+        },
+        {
+          "userId": 1,
+          "id": 2,
+          "title": "quis ut nam facilis et officia qui",
+          "completed": false
+        },
+        {
+          "userId": 1,
+          "id": 3,
+          "title": "fugiat veniam minus",
+          "completed": false
+        },
+        {
+          "userId": 1,
+          "id": 4,
+          "title": "et porro tempora",
+          "completed": true
+        },
+        {
+          "userId": 1,
+          "id": 5,
+          "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
+          "completed": false
+        }
+      ]
     }
-  },
+
+  }
 }
 </script>
 
