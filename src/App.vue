@@ -9,7 +9,7 @@
   <div v-if="accessLevel == 'admin'">Admin</div>
   <div v-else-if="accessLevel == 'marketing'"> Marketin</div>
   <div v-else>User</div> -->
-  <!-- <h1 :class="classH1"> Curso de vue3 </h1> -->
+  <!-- <h1 :class="classH1"> Curso de vue3 </h1> 
   <h1 :class="styleClass"> Curso de vue3 </h1>
 
   <p :class="['text', {'title-home': isHome}]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit sint consequatur deleniti 
@@ -32,6 +32,65 @@
 
 
   <HelloWorld />
+-->
+
+<div>
+  <div>
+    One-way data binding
+
+    Two-way data binding
+    v-model -> formulários
+    <br>
+    <br>
+
+   <div>
+    <label for="nome"> Nome:</label> <br>
+    <input type="text" v-model="nome">
+    <br>
+    {{ nome }}
+
+    <br>
+    <br>
+    <label for="">Estados:</label> <br>
+    <select v-model="estados">
+        <option value="">Selecione</option>
+        <option value="Maranhão">Maranhão</option>
+        <option value="Rio de Janeiro">Rio de Janeiro</option>
+        <option value="São Paulo">São Paulo</option>
+
+    </select> <br> <br>
+
+    {{  estados }}
+
+    <div>
+      <label for=""> newsLetter</label>
+      <input  v-model="newsletter" type="radio" value="Sim"> Sim 
+      <input  v-model="newsletter" type="radio" value="Não"> Não
+      <br> <br>
+
+      {{ newsletter }}
+
+      <br> <br>
+
+      
+
+
+    </div>
+
+
+   </div>
+
+    <!-- <br> -->
+
+    <!-- {{ nome }} -->
+
+  </div>
+</div>
+
+
+
+
+
 </template>
 
 <script>
@@ -42,11 +101,14 @@ import Topo from './components/Topo.vue'
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
+  //   /* HelloWorld,
     Topo
   },
   data() {
     return {
+      nome : 'Karl Marx',
+      estados: '',
+      newsletter: 'Sim',
       // showHeader: true,
       // name: 'Luke',
       // lastName: 'Skywalker',
@@ -90,12 +152,20 @@ export default {
       isHome : true,
       classH1:'title',
       pClass : 'text',
-      styleClass: { 'color': 'aqua', backGroundColor: 'black' }
+      styleClass: { 'color': 'aqua', backGroundColor: 'black' },
+     
 
     }
 
+
+    
+
+    
   }
 }
+
+
+
 </script>
 
 <style>
