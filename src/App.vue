@@ -73,12 +73,32 @@
       <br> <br>
 
       
+      
+      
+      
+    </div>
+    
+    <div>
 
+      <label for="">Contratos</label>
+        <input v-model="contrato" type="checkbox"> Aceita nossos termos... <br>
 
+        {{ contrato }}
     </div>
 
-
    </div>
+
+   <div>
+    <label for=""> Selecione as cores</label>
+      <input  v-model="colors" type="checkbox" value="Azul"> Azul 
+      <input  v-model="colors" type="checkbox" value="Vermelho"> Vermelho
+      <input  v-model="colors" type="checkbox" value="Preto"> Preto
+
+      <br> <br>
+
+      {{ colors }}
+   </div>
+
 
     <!-- <br> -->
 
@@ -109,6 +129,8 @@ export default {
       nome : 'Karl Marx',
       estados: '',
       newsletter: 'Sim',
+      contrato: true,
+      colors: [],
       // showHeader: true,
       // name: 'Luke',
       // lastName: 'Skywalker',
