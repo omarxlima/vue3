@@ -1,34 +1,18 @@
 <template>
-  <Topo></Topo>
+  <Topo v-if="showTopo"/>
 
-
-  <div>
-      <input type="text" v-model="name"> <br>
-
-      {{ name }}
-
-      <br><br><br>
-
-      <select v-model="pageCount" name="" id="">
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="15">15</option>
-
-      </select>
-
-      <br> <br>
-
-      {{  pageCount }}
-
-      <br> <br>
-
-      <input type="text" v-model="user.firstName"> <br>
-      <input type="text" v-model="user.lastName"> <br>
-
-      {{ user.firstName }} {{ user.lastName }}
-
+<!-- el component raiz -->
+  <div> 
       
-    
+      <h1> adfasdf</h1>
+
+      <input type="text" v-model="name">
+
+      {{ name }} <br><br>
+
+      <button @click="showTopo = !showTopo">
+          ativar e desativar topo
+      </button>
   </div>
     
 
@@ -46,30 +30,64 @@ export default {
   },
   data() {
     return {
-        name : '',
-        pageCount: 5,
-        user: {
-          firstName: '',
-          lastName: '',
-        }
+       name: 'Lima Marx',
+       showTopo: true
     }
   },
 
+  //criação
+      // preparar o componente
+      //ajax, inicializar variaveis
+     //Não tem acesso ao DOM
+  //montagem
+      //Inicializar uma lib externa (new Lib())
+      //tem acesso ao DOM
+  //atualização 
+      //DEBUG
+  //desmontagem
+
+      //remover tudo que vai consumir memória (lib->destroy)
+  
+  //hooks
+
+  // beforeUpdate(){
+  //   console.log('before update', this.name)
+  // },
+  // updated() {
+  //   console.log('updated', this.name)
+  // },
+// beforeCreate(){
+//   console.log('before create')
+//   console.log('Estado:', this.name)
+//   console.log('DOM:', this.$el)
+
+// },
+// created() {
+//   console.log('created')
+//   console.log('Estado:', this.name)
+//   console.log('DOM:', this.$el)
+
+
+// },
+// beforeMount() {
+//   console.log('before mount')
+//   console.log('Estado:', this.name)
+//   console.log('DOM:', this.$el)
+
+
+// },
+// mounted() {
+//   console.log('mounted')
+//   console.log('Estado:', this.name)
+//   console.log('DOM:', this.$el)
+
+  
+// },
+
+
+
   watch: {
-      name(vl) {
-        if(vl.length >=3) {
-          this.saveUserName()
-        }
-      },
-      pageCount() {
-        this.changePage()
-      },
-      user: {
-        handler() {
-          console.log('user alterado')
-        },
-        deep:true
-      }
+      
   },
 
   computed: {
@@ -77,14 +95,6 @@ export default {
   },
 
   methods: {
-    saveUserName() {
-      console.log('ajax')
-      console.log(this.name)
-    },
-
-    changePage() {
-      console.log('ajax changePage')
-    }
    
 
   }
