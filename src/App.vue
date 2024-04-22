@@ -1,18 +1,17 @@
 <template>
-  <Topo v-if="showTopo"/>
-
-<!-- el component raiz -->
+  
   <div> 
-      
-      <h1> adfasdf</h1>
+    <Topo> 
+      <template v-slot:title>
+          <!-- Home -->
+      </template>
 
-      <input type="text" v-model="name">
+      <template v-slot:description>
+      <p>asdfadfasdfa</p>
+      </template>
 
-      {{ name }} <br><br>
-
-      <button @click="showTopo = !showTopo">
-          ativar e desativar topo
-      </button>
+      Content do header - menu ...
+    </Topo>    
   </div>
     
 
@@ -30,60 +29,10 @@ export default {
   },
   data() {
     return {
-       name: 'Lima Marx',
-       showTopo: true
+     
+
     }
   },
-
-  //criação
-      // preparar o componente
-      //ajax, inicializar variaveis
-     //Não tem acesso ao DOM
-  //montagem
-      //Inicializar uma lib externa (new Lib())
-      //tem acesso ao DOM
-  //atualização 
-      //DEBUG
-  //desmontagem
-
-      //remover tudo que vai consumir memória (lib->destroy)
-  
-  //hooks
-
-  // beforeUpdate(){
-  //   console.log('before update', this.name)
-  // },
-  // updated() {
-  //   console.log('updated', this.name)
-  // },
-// beforeCreate(){
-//   console.log('before create')
-//   console.log('Estado:', this.name)
-//   console.log('DOM:', this.$el)
-
-// },
-// created() {
-//   console.log('created')
-//   console.log('Estado:', this.name)
-//   console.log('DOM:', this.$el)
-
-
-// },
-// beforeMount() {
-//   console.log('before mount')
-//   console.log('Estado:', this.name)
-//   console.log('DOM:', this.$el)
-
-
-// },
-// mounted() {
-//   console.log('mounted')
-//   console.log('Estado:', this.name)
-//   console.log('DOM:', this.$el)
-
-  
-// },
-
 
 
   watch: {
