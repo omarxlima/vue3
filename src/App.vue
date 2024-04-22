@@ -1,17 +1,13 @@
 <template>
   
   <div> 
-    <Topo> 
-      <template v-slot:title>
-          <!-- Home -->
-      </template>
 
-      <template v-slot:description>
-      <p>asdfadfasdfa</p>
-      </template>
+    <div class="card">
+      TEste
+    </div>
 
-      Content do header - menu ...
-    </Topo>    
+    <BaseCard></BaseCard>
+   
   </div>
     
 
@@ -20,12 +16,12 @@
 <script>
 
 
-import Topo from './components/Topo.vue'
+import BaseCard from '@/components/BaseCard.vue'
 
 export default {
   name: 'App',
   components: {
-    Topo
+    BaseCard
   },
   data() {
     return {
